@@ -5,7 +5,7 @@ hug_authentication_ldap
 [![Build Status](https://travis-ci.org/timothycrosley/hug_authentication_ldap.svg?branch=master)](https://travis-ci.org/timothycrosley/hug_authentication_ldap)
 [![Coverage Status](https://coveralls.io/repos/timothycrosley/hug_authentication_ldap/badge.svg?branch=master&service=github)](https://coveralls.io/github/timothycrosley/hug_authentication_ldap?branch=master)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/hug_authentication_ldap/)
-[![Join the chat at https://gitter.im/timothycrosley/hug_authentication_ldap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/timothycrosley/hug_authentication_ldap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/timothycrosley/hug](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/timothycrosley/hug?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Easy to use LDAP based authentication support for hug:
 
