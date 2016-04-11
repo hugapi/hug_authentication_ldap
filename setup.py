@@ -82,7 +82,7 @@ except (IOError, ImportError, OSError, RuntimeError):
    readme = ''
 
 setup(name='hug_authentication_ldap',
-      version='0.0.1',
+      version='1.0.0',
       description='LDAP based authentication support for hug',
       long_description=readme,
       author='Timothy Crosley',
