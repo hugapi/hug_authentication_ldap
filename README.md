@@ -14,7 +14,7 @@ import hug
 import hug_authentication_ldap
 
 
-authentaction = hug_authentication_ldap.basic('myldap.server.net', 'uid={user_name},ou=people')
+authentication = hug_authentication_ldap.basic('myldap.server.net', 'uid={user_name},ou=people')
 
 
 @hug.get(requires=authentication)
