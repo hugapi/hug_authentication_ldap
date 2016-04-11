@@ -22,6 +22,24 @@ def say_hello(hug_user):
     return 'Hello {}!'.format(hug_user.name)
 ```
 
+Or, for general reusable LDAP password verification within hug:
+
+```py
+import hug
+import hug_authentication_ldap
+
+
+ldap_check = hug_authentication_ldap.verify('myldap.server.net', 'uid={user_name},ou=people')
+
+
+@hug.get()
+def check(user_name, password):
+    if ldap_check(user_name, password):
+        return True
+
+    return False
+```
+
 Installing hug_authentication_ldap
 ===================
 

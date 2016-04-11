@@ -32,16 +32,19 @@ def server(url, get_info=ldap3.ALL, **kwargs):
     return ldap3.Server(url, get_info=get_info, **kwargs)
 
 
-def verify(server, user_template="uid={user_name},ou=people", authentication=ldap3.AUTH_SIMPLE, auto_bind=True,
+def verify(server_instance, user_template="uid={user_name},ou=people", authentication=ldap3.AUTH_SIMPLE, auto_bind=True,
             **kwargs):
     """Returns an authentication verification callback that enforces ldap authentication passing in the
        user_template with the passed in user overriding any in-string placement of {user_name}
 
        passes any extra **kwargs parameters to the ldap3.Connection method used for authentication
     """
+    if type(server_instance) == str:
+        server_instance = server(server_instance)
+
     def verify_user(user_name, password):
         try:
-            connection = ldap3.Connection(server, authentication=authentication, auto_bind=auto_bind,
+            connection = ldap3.Connection(server_instance, authentication=authentication, auto_bind=auto_bind,
                                           user=user_template.format(user_name=user_name), password=password, **kwargs)
             return user(user_name, connection)
         except ldap3.core.exceptions.LDAPBindError:
