@@ -1,4 +1,4 @@
-![hug_authentication_ldap](https://raw.github.com/timothycrosley/hug_authentication_ldap/develop/artwork/logo.png)
+hug_authentication_ldap
 ===================
 
 [![PyPI version](https://badge.fury.io/py/hug_authentication_ldap.svg)](http://badge.fury.io/py/hug_authentication_ldap)
@@ -7,10 +7,20 @@
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/hug_authentication_ldap/)
 [![Join the chat at https://gitter.im/timothycrosley/hug_authentication_ldap](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/timothycrosley/hug_authentication_ldap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-LDAP based authentication support for hug
+Easy to use LDAP based authentication support for hug:
 
-[![hug_authentication_ldap Example](https://raw.github.com/timothycrosley/hug_authentication_ldap/develop/artwork/example.gif)](https://github.com/timothycrosley/hug_authentication_ldap/blob/develop/examples/example.py)
+```py
+import hug
+import hug_authentication_ldap
 
+
+authentaction = hug_authentication_ldap.basic('myldap.server.net', 'uid={user_name},ou=people')
+
+
+@hug.get(requires=authentication)
+def say_hello(hug_user):
+    return "Hello {}!".format(hug_user.name)
+```
 
 Installing hug_authentication_ldap
 ===================
@@ -24,10 +34,10 @@ pip3 install hug_authentication_ldap --upgrade
 Ideally, within a virtual environment.
 
 
-Why hug_authentication_ldap?
+What is hug_authentication_ldap?
 ===================
 
-LDAP based authentication support for hug
+An extension for hug that provides LDAP based authentication support
 
 --------------------------------------------
 
