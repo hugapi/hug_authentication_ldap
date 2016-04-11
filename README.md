@@ -19,7 +19,7 @@ authentaction = hug_authentication_ldap.basic('myldap.server.net', 'uid={user_na
 
 @hug.get(requires=authentication)
 def say_hello(hug_user):
-    return "Hello {}!".format(hug_user.name)
+    return 'Hello {}!'.format(hug_user.name)
 ```
 
 Installing hug_authentication_ldap
