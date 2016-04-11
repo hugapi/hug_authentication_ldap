@@ -1,0 +1,3 @@
+[report]
+include = hug_authentication_ldap/*.py
+exclude_lines = if __name__ == .__main__.:
