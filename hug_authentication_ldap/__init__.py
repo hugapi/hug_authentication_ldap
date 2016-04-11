@@ -20,6 +20,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 """
 from hug_authentication_ldap._version import current
-from hug.authentication_ldap.authentication import server, verify, basic
+from hug_authentication_ldap.authentication import server, verify, basic
 
 __version__ = current
