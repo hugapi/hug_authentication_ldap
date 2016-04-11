@@ -25,5 +25,10 @@ import hug_authentication_ldap
 
 
 def test_hug_authentication_ldap():
-    '''Test to ensure hug_authentication_ldap works as expected'''
+    """Test to ensure hug_authentication_ldap exposes the expected features"""
     assert hug_authentication_ldap
+    assert hug_authentication_ldap.server
+    assert hug_authentication_ldap.verify
+    assert hug_authentication_ldap.authentication
+    assert hug_authentication_ldap.__version__
+

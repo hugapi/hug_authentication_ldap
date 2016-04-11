@@ -39,10 +39,10 @@ def verify(server, user_template="uid={user_name},ou=people", authentication=lda
 
        passes any extra **kwargs parameters to the ldap3.Connection method used for authentication
     """
-    def verify_user(user_name, user_password):
+    def verify_user(user_name, password):
         try:
-            ldap3.Connection(server, authentication=authentication, user=user_template.format(user_name=user_name),
-                                password=password, auto_bind=auto_bind, **kwargs)
+            connection = ldap3.Connection(server, authentication=authentication, auto_bind=auto_bind,
+                                          user=user_template.format(user_name=user_name), password=password, **kwargs)
             return user(user_name, connection)
         except ldap3.core.exceptions.LDAPBindError:
             return False
