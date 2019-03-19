@@ -53,6 +53,7 @@ dist
 # IDE Files
 atlassian-ide-plugin.xml
 .idea/
+.vscode/
 *.swp
 *.kate-swp
 .ropeproject/

@@ -75,16 +75,17 @@ class PyTest(TestCommand):
 
 cmdclass['test'] = PyTest
 
-try:
-   import pypandoc
-   readme = pypandoc.convert('README.md', 'rst')
-except (IOError, ImportError, OSError, RuntimeError):
-   readme = ''
+
+with open('README.md', encoding='utf-8') as f:  # Loads in the README for PyPI
+    long_description = f.read()
+
 
 setup(name='hug_authentication_ldap',
       version='1.0.3',
       description='LDAP based authentication support for hug',
-      long_description=readme,
+      long_description=long_description,
+      # PEP 566, the new PyPI, and setuptools>=38.6.0 make markdown possible
+      long_description_content_type='text/markdown',
       author='Timothy Crosley',
       author_email='timothy.crosley@gmail.com',
       url='https://github.com/timothycrosley/hug_authentication_ldap',
