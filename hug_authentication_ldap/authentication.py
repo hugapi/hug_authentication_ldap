@@ -32,7 +32,7 @@ def server(url, get_info=ldap3.ALL, **kwargs):
     return ldap3.Server(url, get_info=get_info, **kwargs)
 
 
-def verify(server_instance, user_template="uid={user_name},ou=people", authentication=ldap3.AUTH_SIMPLE, auto_bind=True,
+def verify(server_instance, user_template="uid={user_name},ou=people", authentication=ldap3.SIMPLE, auto_bind=True,
             **kwargs):
     """Returns an authentication verification callback that enforces ldap authentication passing in the
        user_template with the passed in user overriding any in-string placement of {user_name}
